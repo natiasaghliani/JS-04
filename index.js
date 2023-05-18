@@ -15,15 +15,20 @@ const users = [
     { usarname: "Mari", age: 16 },
     { usarname: "Salome", age: 10 },
     { usarname: "Gega", age: 28 },
+    { usarname: "Papuna", age: 40 },
 ];
 
 const create = document.getElementById("create");
+
 const deleteList = document.getElementById("delete");
+const listContainer = document.getElementById("userList")
+
+const myDiv = document.getElementById('myDiv');
+const myBtn = document.getElementById('myBtn');
+
 
 function createList(users) {
-    const listContainer = document.getElementById("userList")
     listContainer.innerHTML = "";
-
 
     users.forEach(user => {
         if (user.age > 18) {
@@ -35,18 +40,42 @@ function createList(users) {
 
     create.disabled = true;
     deleteList.disabled = false;
+
+    myDiv.classList.add("divstyle")
 }
 
 createList(users);
 
-
-
-
-
 function deleteLists() {
-    listContainer.innerHTML = "";
+    listContainer.innerHTML = "<span style='color:red'>Musho</span>";
     create.disabled = false;
     deleteList.disabled = true;
+
+    myDiv.classList.remove("divstyle")
 }
+
+myBtn.addEventListener("click", toggleClass)
+
+function toggleClass() {
+    myDiv.classList.toggle("divstyle");
+}
+
+const hasClass = element.classList.contains("divstyle");
+const fakeBtn = document.getElementById('fake');
+
+fakeBtn.addEventListener("click", fakeToggle)
+
+function fakeToggle() {
+    if (hasClass = element.classList.contains("divstyle")) {
+        myDiv.classList.remove("divstyle")
+    }
+    else {
+        myDiv.classList.add("divstyle")
+    }
+}
+
+
+
+
 
 
