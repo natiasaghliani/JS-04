@@ -60,16 +60,17 @@ function toggleClass() {
     myDiv.classList.toggle("divstyle");
 }
 
-const hasClass = element.classList.contains("divstyle");
+
 const fakeBtn = document.getElementById('fake');
 
 fakeBtn.addEventListener("click", fakeToggle)
 
 function fakeToggle() {
-    if (hasClass = element.classList.contains("divstyle")) {
+    const hasClass = myDiv.classList.contains("divstyle");
+
+    if (hasClass) {
         myDiv.classList.remove("divstyle")
-    }
-    else {
+    } else {
         myDiv.classList.add("divstyle")
     }
 }
